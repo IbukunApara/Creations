@@ -66,6 +66,7 @@ nav {
 
 .mlogo {
     display: none;
+    font-family: "iceland", sans-serif;
 }
 
 @keyframes letterExpand {
@@ -436,8 +437,8 @@ nav {
     display: inline-block;
     text-decoration: none;
     color: var(--deep);
-    font-size: 18px;
-    margin-right: 15px;
+    font-size: 20px;
+    margin-right: 17px;
     transition: color 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateY(10px);
@@ -655,3 +656,4 @@ nav {
     }
 
 }
+
