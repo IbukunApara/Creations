@@ -1,0 +1,668 @@
+:root {
+    --deep: black;
+    --light: white;
+}
+* {
+    margin: 0;
+}
+
+@font-face {
+    font-family: iceland;
+    src: url(Iceland-Regular.ttf);
+}
+
+
+body {
+    font-family: "iceland", serif;
+    background: linear-gradient(
+    to top right,
+    rgba(4, 9, 25, 1),      /* deep midnight navy */
+    rgba(10, 20, 45, 0.95), /* richer blue shadow */
+    rgba(15, 35, 70, 0.85), /* soft blended blue */
+    rgba(30, 60, 110, 0.70) /* subtle fade highlight */
+);
+background-attachment: fixed;
+
+
+}
+
+
+/* Header Section */
+
+nav a {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+nav {
+    width: 50%;
+    height: 50px;
+    border-radius: 8px;
+    box-shadow: 4px 6px 8px rgb(00, 00, 00, 0.2);
+    background-color: white;
+    margin: 30px auto 0 auto;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+
+.header {
+    font-size: 30px;
+    color: black;
+    font-weight: 400;
+    margin-left: 25px;
+    animation: letterExpand 0.8s ease forwards;
+}
+
+.mlogo {
+    display: none;
+}
+
+@keyframes letterExpand {
+    0% {
+        opacity: 0;
+        letter-spacing: 0.1px;
+        filter: blur(6px);
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: 0;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.social a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--deep);
+    font-size: 24px;
+    margin-right: 60px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+    animation: fadeBlur 0.8s ease forwards;
+}
+
+
+
+.social a:nth-of-type(1):hover {
+    color: #EC5E95;
+    transform: scale(1.2);
+}
+.social a:nth-of-type(2):hover {
+    color: #0057FF;
+    transform: scale(1.2);
+}
+.social a:nth-of-type(3):hover {
+    color: #000000;
+    transform: scale(1.3);
+}
+
+/* Main */
+.container {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    width: 12.5%;
+    height: 10%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    text-align: center;
+    font-size: 24px;
+    margin: 15px;
+    background-color: aquamarine;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+    animation-delay: 0.15s;
+}
+
+
+.left:hover {
+    background-color: aqua;
+    transform: scale(1.1)
+
+}
+
+.right {
+    width: 12.5%;
+    height: 10%;
+    padding: 20px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+    margin: 15px;
+    background-color: white;
+    transition: 0.3s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+}
+
+@keyframes softAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.right:hover {
+    background-color: whitesmoke;
+    transform: scale(1.1);
+}
+
+.left a {
+    text-decoration: none;
+    color: #011502;
+}
+
+.right a {
+    text-decoration: none;
+    color: #011502;
+}
+
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: rise 0.8s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+
+@keyframes rise {
+    to {
+         opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.fonts {
+    width: 8%;
+    height: 10%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 20px 50px;
+    box-shadow: 0px 4px 10px rgb(00, 00, 9, 0.2);
+    transition: 0.4s;
+    font-size: 20px;
+    color: black;
+    border-radius: 4px;
+    background-color: white;
+    
+}
+
+.fonts:hover {
+    background-color: aqua;
+    color: black;
+}
+
+
+.floating1 {
+    width: 200px;
+    height: 200px;
+    color: black;
+    background-color: aliceblue;
+    box-shadow: 4px 8px 12px rgb(00, 00, 9, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    border: 2px solid aliceblue;
+    padding: 10px;
+    z-index: -1;
+}
+
+.floating1 p {
+    color: black;
+    font-size: 18px;
+
+}
+
+.floating2 {
+    width: 200px;
+    height: 200px;
+    color: black;
+    background-color: aliceblue;
+    box-shadow: 4px 8px 12px rgb(00, 00, 9, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    border: 2px solid aliceblue;
+    padding: 10px;
+    z-index: -1;
+}
+
+
+.circle {
+    border: 1px solid aqua;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+}
+.fonts h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* DOWNLOAD ICON */
+
+.bg {
+    border-radius: 50%;
+    background-color: #EDEDED;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.bg:hover {
+    background-color: eee;
+}
+
+.icon1 {
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    filter: brightness(0); 
+    cursor: pointer;
+    transition-duration: 5s;
+}
+
+
+.icon1:hover{
+    filter: brightness(0); 
+}
+ 
+.bg:active {
+    background-color: aquamarine; /* soft eye-catching mint */
+}
+
+.bg:active .icon1 {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(600%) hue-rotate(65deg);
+}
+
+
+/* Fonts styling */
+.rubik {
+    font-family: Rubik, sans-serif;
+    font-size: 15px;
+}
+
+.iceland {
+    font-family: iceland, sans-serif;
+    font-size: 15px;
+}
+
+.roboto {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+}
+
+.opensans {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+
+.lato {
+    font-family: lato, sans-serif;
+    font-size: 16px;
+}
+
+.montserrat {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+}
+
+.poppins {
+    font-family: poppins, sans-serif;
+    font-size: 16px;
+}
+
+.sourcesans {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 16px;
+}
+
+.raleway {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+}
+
+.nunito {
+    font-family: Nunito, sans-serif;
+    font-size: 16px;
+}
+
+.oswald {
+    font-family: Oswald, sans-serif;
+    font-size: 16px;
+}
+
+.helvetica {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.playfairdisplay {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 16px;
+}
+
+.merriweather {
+    font-family: Merriweather, sans-serif;
+    font-size: 16px;
+}
+
+.ptsans {
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
+
+.bitter {
+    font-family: Bitter, sans-serif;
+    font-size: 16px;
+}
+
+.lora {
+    font-family: Lora, sans-serif;
+    font-size: 16px;
+}
+
+.karla {
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+}
+
+.abrilfatface {
+    font-family: "Abril Fatface", sans-serif;
+    font-size: 16px;
+}
+
+.bebasneue {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+}
+
+.librefranklin {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 16px;
+}
+
+/*Media Query for Mobile */
+@media (max-width: 600px) {
+    nav {
+        width: 300px;
+        height: 50px;
+        border-radius: 3;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
+
+    .header a { 
+      display: none;
+
+    }
+
+    .social a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--deep);
+    font-size: 20px;
+    margin-right: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+    animation: fadeBlur 0.8s ease forwards;
+   
+    }
+
+    .mlogo {
+        display: flex;
+        border-left: 5px solid aqua;
+        border-radius: 1%;
+        padding: 5px;
+        font-size: 23px;
+        margin-right: 55px;
+        transition: 0.3s; 
+    }
+
+    .left {
+    width: 33%;
+    height: 10%;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    text-align: center;
+    font-size: 24px;
+    margin: 8px 10px;
+    transition: 0.3s;
+     opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+   
+}
+
+.right {
+    width: 25%;
+    height: 10%;
+    padding: 20px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    border-radius: 7px;
+    text-align: center;
+    font-size: 24px;
+    margin: 8px 10px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+    animation-delay: 0.04s;
+}
+
+.fonts {
+    width: 75%;
+    height: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 50px 20px 50px;
+    box-shadow: 0px 4px 10px rgb(00, 00, 9, 0.2);
+    transition: 0.4s;
+    font-size: 20px;
+    color: black;
+    border-radius: 4px;
+    background-color: white; 
+}
+}
+
+/* DOWNLOAD ICON */
+
+.bg {
+    border-radius: 50%;
+    background-color: #EDEDED;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.bg:hover {
+    background-color: eee;
+}
+
+.icon1 {
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    filter: brightness(0); 
+    cursor: pointer;
+    transition-duration: 5s;
+}
+
+/* Media Query For Tablets */
+@media (min-width: 601px) and (max-width: 1100px) {
+    nav {
+        width: 550px;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;  
+    }
+
+    .header a { 
+      display: none;
+
+    }
+
+    .social a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--deep);
+    font-size: 32px;
+    margin-right: 25px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(6px);
+    animation: fadeBlur 0.8s ease forwards;
+   
+    }
+
+     .mlogo {
+        display: flex;
+        border-left: 7px solid aqua;
+        border-radius: 1%;
+        padding: 5px;
+        font-size: 35px;
+        margin-right: 295px;
+        transition: 0.3s;
+    
+    }
+
+        .left {
+    width: 30%;
+    height: 10%;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    text-align: center;
+    font-size: 38px;
+    margin: 8px 10px;
+    transition: 0.3s;
+     opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+   
+}
+
+.right {
+    width: 25%;
+    height: 10%;
+    padding: 20px;
+    box-shadow: -4px 4px 8px rgb(00, 00, 00, 0.2);
+    border-radius: 7px;
+    text-align: center;
+    font-size: 38px;
+    margin: 8px 10px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(2px);
+    animation: softAppear 0.6s ease forwards;
+    animation-delay: 0.04s;
+}
+
+.fonts {
+    width: 75%;
+    height: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 50px 20px 50px;
+    box-shadow: 0px 4px 10px rgb(00, 00, 9, 0.2);
+    transition: 0.4s;
+    font-size: 30px;
+    color: black;
+    border-radius: 4px;
+    background-color: white; 
+}
+
+
+/* DOWNLOAD ICON */
+
+.bg {
+    border-radius: 50%;
+    background-color: #EDEDED;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.bg:hover {
+    background-color: eee;
+}
+
+.icon1 {
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    filter: brightness(0); 
+    cursor: pointer;
+    transition-duration: 5s;
+}
+
+
+}
